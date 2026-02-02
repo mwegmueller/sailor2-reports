@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Sailor 2.0 - Meeting Intelligence Profile for Michael Wegmüller">
+    <meta property="og:title" content="Sailor 2.0 - Michael Wegmüller Profile">
+    <meta property="og:description" content="Meeting Intelligence Profile for Michael Wegmüller at Artifact SA">
+    <title>Sailor 2.0 - Michael Wegmüller</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #f5f5f5;
+            color: #36454f;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            --charcoal: #36454f;
+            --slate-gray: #708090;
+            --light-gray: #d3d3d3;
+            --white: #ffffff;
+            --green-verified: #22c55e;
+            --yellow-inferred: #eab308;
+            --red-speculative: #ef4444;
+            --blue-secondary: #3b82f6;
+            --navy: #1e3a5f;
+            --artifact-blue: #1a2b4a;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active { animation: fadeIn 0.3s ease-out; }
+        .card { animation: fadeIn 0.4s ease-out; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+
+        /* Print styles */
+        @media print {
+            .tabs-container, .share-button, .mobile-nav, .methodology-toggle { display: none !important; }
+            .tab-content { display: block !important; page-break-after: always; }
+            .header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .artifact-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .artifact-logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .artifact-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artifact-logo-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .artifact-logo-tagline {
+            font-size: 0.65rem;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .sailor-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .header-badge {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            text-align: right;
+        }
+
+        .badge-label {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-score {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        .badge-score-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Methodology Info Box */
+        .methodology-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .methodology-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .methodology-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--artifact-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .methodology-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .methodology-title {
+            font-weight: 600;
+            color: var(--artifact-blue);
+            font-size: 0.9rem;
+        }
+
+        .methodology-badge {
+            margin-left: auto;
+            background: var(--artifact-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .methodology-content {
+            font-size: 0.85rem;
+            color: var(--slate-gray);
+            line-height: 1.6;
+        }
+
+        .methodology-content strong {
+            color: var(--charcoal);
+        }
+
+        .methodology-sources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .methodology-source-tag {
+            background: white;
+            border: 1px solid #bae6fd;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--artifact-blue);
+        }
+
+        .methodology-toggle {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--slate-gray);
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .methodology-toggle:hover {
+            color: var(--artifact-blue);
+        }
+
+        .methodology-box.collapsed .methodology-content,
+        .methodology-box.collapsed .methodology-sources {
+            display: none;
+        }
+
+        /* Share button */
+        .share-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .share-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .share-toast {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: var(--charcoal);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 1001;
+        }
+
+        .share-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Tabs */
+        .tabs-container {
+            background: white;
+            padding: 0 40px;
+            border-bottom: 1px solid var(--light-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            padding: 15px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .tabs::-webkit-scrollbar { display: none; }
+
+        .tab {
+            padding: 10px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+        }
+
+        .tab.active {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
+        }
+
+        /* Mobile navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--light-gray);
+            padding: 8px;
+            z-index: 100;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-nav .tabs {
+            padding: 0;
+            justify-content: flex-start;
+        }
+
+        .mobile-nav .tab {
+            padding: 8px 14px;
+            font-size: 0.8rem;
+        }
+
+        /* Content */
+        .content {
+            padding: 30px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-verified { background: var(--green-verified); color: white; }
+        .badge-inferred { background: var(--yellow-inferred); color: white; }
+        .badge-speculative { background: var(--red-speculative); color: white; }
+        .badge-high-confidence { background: var(--green-verified); color: white; }
+
+        /* Grid layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        /* Metric boxes */
+        .metric-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .metric-value.highlight { color: var(--green-verified); }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--slate-gray);
+            margin-top: 4px;
+        }
+
+        /* BLUF Section */
+        .bluf-section {
+            background: var(--navy);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .bluf-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+
+        .bluf-content {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .bluf-content strong { color: #fbbf24; }
+
+        /* Insight boxes */
+        .insight-box {
+            border-left: 4px solid;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box.yellow { border-color: #fbbf24; }
+        .insight-box.red { border-color: #ef4444; }
+        .insight-box.green { border-color: #22c55e; }
+        .insight-box.blue { border-color: #3b82f6; }
+        .insight-box.orange { border-color: #f97316; }
+        .insight-box.purple { border-color: #8b5cf6; }
+
+        .insight-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-period { font-weight: 600; color: var(--charcoal); }
+        .timeline-content { color: var(--slate-gray); }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* People cards */
+        .person-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .person-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--slate-gray);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .person-info h4 { font-weight: 600; margin-bottom: 4px; }
+        .person-info p { font-size: 0.85rem; color: var(--slate-gray); }
+
+        /* Radar chart with 8 dimensions */
+        .radar-container {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .radar-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+
+        .radar-bg.r1 { width: 260px; height: 260px; }
+        .radar-bg.r2 { width: 195px; height: 195px; }
+        .radar-bg.r3 { width: 130px; height: 130px; }
+        .radar-bg.r4 { width: 65px; height: 65px; }
+
+        .radar-label {
+            position: absolute;
+            font-size: 0.7rem;
+            color: var(--slate-gray);
+            text-align: center;
+            width: 70px;
+        }
+
+        /* 8 positions for radar labels */
+        .radar-label.pos-1 { top: -5px; left: 50%; transform: translateX(-50%); }
+        .radar-label.pos-2 { top: 20px; right: 5px; }
+        .radar-label.pos-3 { top: 50%; right: -15px; transform: translateY(-50%); }
+        .radar-label.pos-4 { bottom: 20px; right: 5px; }
+        .radar-label.pos-5 { bottom: -5px; left: 50%; transform: translateX(-50%); }
+        .radar-label.pos-6 { bottom: 20px; left: 5px; }
+        .radar-label.pos-7 { top: 50%; left: -15px; transform: translateY(-50%); }
+        .radar-label.pos-8 { top: 20px; left: 5px; }
+
+        .radar-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 220px;
+        }
+
+        .radar-shape svg { width: 100%; height: 100%; }
+
+        /* Profile table */
+        .profile-table { width: 100%; }
+        .profile-table tr { border-bottom: 1px solid #eee; }
+        .profile-table td { padding: 12px 0; }
+        .profile-table td:first-child { font-weight: 600; width: 40%; }
+
+        /* SWOT */
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .swot-box { padding: 20px; border-radius: 8px; }
+        .swot-box.strengths { background: #dcfce7; }
+        .swot-box.weaknesses { background: #fef3c7; }
+        .swot-box.opportunities { background: #dbeafe; }
+        .swot-box.threats { background: #fee2e2; }
+
+        .swot-box h4 {
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .swot-box ul { list-style: none; margin-left: 0; font-size: 0.9rem; }
+        .swot-box li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .swot-box li::before { content: "•"; position: absolute; left: 0; color: var(--slate-gray); }
+
+        /* Interactive bullet items */
+        .interactive-item {
+            position: relative;
+            cursor: pointer;
+            padding: 8px 12px;
+            margin: -8px -12px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .interactive-item:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .interactive-item .item-recommendation {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 12px;
+            background: var(--navy);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            width: 280px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 100;
+            line-height: 1.5;
+        }
+
+        .interactive-item .item-recommendation::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 8px solid transparent;
+            border-right-color: var(--navy);
+            border-left: none;
+        }
+
+        .interactive-item:hover .item-recommendation {
+            display: block;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .item-recommendation-label {
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 6px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive adjustments for recommendations */
+        @media (max-width: 1200px) {
+            .interactive-item .item-recommendation {
+                left: auto;
+                right: 0;
+                top: 100%;
+                transform: none;
+                margin-left: 0;
+                margin-top: 8px;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .interactive-item .item-recommendation::before {
+                left: 20px;
+                top: -8px;
+                transform: none;
+                border: 8px solid transparent;
+                border-bottom-color: var(--navy);
+                border-top: none;
+            }
+        }
+
+        /* Conversation cards */
+        .conversation-card {
+            background: #f8f9fa;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .conversation-card h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .conversation-card p { font-size: 0.9rem; color: var(--slate-gray); }
+        .conversation-card.warning { border-left: 3px solid #f97316; }
+
+        /* Topics table */
+        .topics-table { width: 100%; border-collapse: collapse; }
+        .topics-table th {
+            background: var(--light-gray);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        .topics-table td { padding: 16px; border-bottom: 1px solid #eee; }
+
+        .probability-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .prob-very-high { background: var(--green-verified); color: white; }
+        .prob-high { background: #22c55e; color: white; }
+        .prob-medium-high { background: #3b82f6; color: white; }
+        .prob-medium { background: #3b82f6; color: white; }
+
+        /* Media items */
+        .media-item {
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .media-item h4 {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .media-item p { font-size: 0.9rem; color: var(--slate-gray); }
+
+        /* Charts */
+        .chart-container {
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .bar-chart-wrapper {
+            position: relative;
+            padding-left: 50px;
+            padding-bottom: 30px;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            padding-top: 20px;
+            border-left: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+            position: relative;
+        }
+
+        .bar-chart-y-axis {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: rotate(-90deg) translateX(50%);
+            transform-origin: left center;
+            font-size: 0.75rem;
+            color: var(--slate-gray);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .bar-chart-x-axis {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: var(--slate-gray);
+            font-weight: 600;
+        }
+
+        .bar-chart-y-ticks {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--slate-gray);
+            padding: 20px 0;
+        }
+
+        .bar-chart-grid-line {
+            position: absolute;
+            left: 50px;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        .bar {
+            width: 50px;
+            display: flex;
+            flex-direction: column-reverse;
+            border-radius: 4px 4px 0 0;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .bar:hover {
+            transform: scaleY(1.02);
+        }
+
+        .bar-segment { width: 100%; transition: opacity 0.2s; }
+        .bar-segment.positive { background: var(--green-verified); }
+        .bar-segment.neutral { background: var(--blue-secondary); }
+        .bar-segment.critical { background: var(--red-speculative); }
+        .bar-label { font-size: 0.85rem; color: var(--slate-gray); font-weight: 500; }
+
+        .bar-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--charcoal);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            margin-bottom: 8px;
+            z-index: 10;
+        }
+
+        .bar-group:hover .bar-tooltip {
+            opacity: 1;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        /* Pie chart */
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: conic-gradient(
+                var(--green-verified) 0deg 162deg,
+                var(--blue-secondary) 162deg 252deg,
+                var(--yellow-inferred) 252deg 324deg,
+                var(--red-speculative) 324deg 360deg
+            );
+        }
+
+        .pie-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Scatter plot */
+        .scatter-plot {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 40px 50px 50px 60px;
+            height: 350px;
+            position: relative;
+        }
+
+        .scatter-grid {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 50px;
+            bottom: 50px;
+            border-left: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .scatter-grid-line {
+            position: absolute;
+            background: #e0e0e0;
+        }
+
+        .scatter-grid-line.horizontal {
+            width: 100%;
+            height: 1px;
+        }
+
+        .scatter-grid-line.vertical {
+            width: 1px;
+            height: 100%;
+        }
+
+        .scatter-grid-line.h1 { bottom: 25%; }
+        .scatter-grid-line.h2 { bottom: 50%; }
+        .scatter-grid-line.h3 { bottom: 75%; }
+        .scatter-grid-line.v1 { left: 25%; }
+        .scatter-grid-line.v2 { left: 50%; }
+        .scatter-grid-line.v3 { left: 75%; }
+
+        .scatter-axis-label {
+            position: absolute;
+            font-size: 0.75rem;
+            color: var(--slate-gray);
+            font-weight: 600;
+        }
+
+        .scatter-axis-label.y-label {
+            left: 10px;
+            top: 50%;
+            transform: rotate(-90deg) translateX(50%);
+            transform-origin: left center;
+            white-space: nowrap;
+        }
+
+        .scatter-axis-label.x-label {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scatter-axis-label.y-high { left: 15px; top: 45px; transform: none; }
+        .scatter-axis-label.y-low { left: 15px; bottom: 55px; transform: none; }
+        .scatter-axis-label.x-low { left: 65px; bottom: 15px; }
+        .scatter-axis-label.x-high { right: 55px; bottom: 15px; }
+
+        .scatter-dots-container {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 50px;
+            bottom: 50px;
+        }
+
+        .scatter-dot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .scatter-dot:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .scatter-dot.subject { background: var(--green-verified); width: 36px; height: 36px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .scatter-dot.competitor1 { background: var(--charcoal); }
+        .scatter-dot.competitor2 { background: var(--blue-secondary); }
+        .scatter-dot.competitor3 { background: var(--slate-gray); }
+
+        .scatter-tooltip {
+            position: absolute;
+            background: var(--charcoal);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            z-index: 10;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scatter-dot:hover .scatter-tooltip {
+            opacity: 1;
+        }
+
+        /* Differentiators */
+        .differentiator-box {
+            background: #f0f0f0;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .differentiator-icon { font-size: 2rem; margin-bottom: 12px; }
+        .differentiator-label { font-weight: 500; color: var(--slate-gray); }
+
+        /* Strategy banner */
+        .strategy-banner {
+            background: var(--navy);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .strategy-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+
+        .strategy-content { font-size: 1rem; line-height: 1.7; }
+
+        /* Sources section */
+        .sources-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .sources-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .source-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: all 0.2s;
+        }
+
+        .source-item:hover {
+            background: #e8e8e8;
+            transform: translateX(4px);
+        }
+
+        .source-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--blue-secondary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .source-info { flex: 1; min-width: 0; }
+        .source-name { font-weight: 600; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .source-meta { font-size: 0.75rem; color: var(--slate-gray); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 40px;
+            color: var(--slate-gray);
+            font-size: 0.85rem;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .footer p { margin-bottom: 8px; }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-artifact-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-artifact-logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .footer-artifact-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--artifact-blue);
+        }
+
+        .footer-sailor {
+            font-size: 1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .original-prompt {
+            margin-top: 16px;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .original-prompt strong {
+            font-style: normal;
+            color: var(--charcoal);
+        }
+
+        /* Responsible AI Badge */
+        .responsible-ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border: 1px solid #86efac;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #166534;
+            margin-top: 12px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .header { padding: 24px 24px; }
+            .header h1 { font-size: 2rem; }
+            .content { padding: 24px 24px; }
+            .tabs-container { padding: 0 24px; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 20px 16px; }
+            .header h1 { font-size: 1.6rem; }
+            .header-subtitle { font-size: 0.95rem; }
+            .header-badge { position: relative; top: 0; right: 0; margin-top: 16px; text-align: left; }
+            .header-meta { font-size: 0.8rem; gap: 12px; }
+            .header-brand { flex-wrap: wrap; }
+            .brand-divider { display: none; }
+
+            .tabs-container { display: none; }
+            .mobile-nav { display: block; }
+
+            .content { padding: 16px; padding-bottom: 80px; }
+
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .swot-grid { grid-template-columns: 1fr; }
+
+            .card { padding: 16px; }
+            .card-title { font-size: 1rem; }
+
+            .metric-value { font-size: 1.5rem; }
+            .metric-box { padding: 14px; }
+
+            .timeline-item { grid-template-columns: 100px 1fr; gap: 12px; }
+
+            .radar-container { width: 260px; height: 260px; }
+            .radar-bg.r1 { width: 220px; height: 220px; }
+            .radar-bg.r2 { width: 165px; height: 165px; }
+            .radar-bg.r3 { width: 110px; height: 110px; }
+            .radar-bg.r4 { width: 55px; height: 55px; }
+            .radar-shape { width: 180px; height: 180px; }
+            .radar-label { font-size: 0.65rem; width: 60px; }
+
+            .bar { width: 35px; }
+            .bar-chart { height: 160px; }
+
+            .share-button { bottom: 70px; padding: 12px 18px; font-size: 0.85rem; }
+
+            .topics-table { font-size: 0.85rem; }
+            .topics-table th, .topics-table td { padding: 10px 8px; }
+
+            .sources-grid { grid-template-columns: 1fr; }
+
+            .footer { padding: 24px 16px; }
+
+            .methodology-box { padding: 14px 16px; }
+            .methodology-sources { gap: 6px; }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 1.4rem; }
+            .badge-score { font-size: 2rem; }
+            .bluf-section, .strategy-banner { padding: 16px; }
+            .person-card { padding: 12px; gap: 12px; }
+            .person-avatar { width: 40px; height: 40px; font-size: 0.85rem; }
+            .tag { padding: 6px 12px; font-size: 0.8rem; }
+            .chart-legend { gap: 12px; }
+            .legend-item { font-size: 0.75rem; }
+            .artifact-logo-name { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-brand">
+            <div class="artifact-logo">
+                <!-- Artifact Logo SVG -->
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10C50 10 35 10 25 20C15 30 15 45 15 45C15 45 15 30 25 20C35 10 50 10 50 10Z" fill="white"/>
+                    <path d="M90 45C90 45 90 30 80 20C70 10 55 10 55 10C55 10 70 10 80 20C90 30 90 45 90 45Z" fill="white"/>
+                    <path d="M50 90C50 90 65 90 75 80C85 70 85 55 85 55C85 55 85 70 75 80C65 90 50 90 50 90Z" fill="white"/>
+                    <path d="M10 55C10 55 10 70 20 80C30 90 45 90 45 90C45 90 30 90 20 80C10 70 10 55 10 55Z" fill="white"/>
+                    <path d="M30 35C30 35 30 25 40 25C50 25 50 35 50 35" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M70 35C70 35 70 25 60 25C50 25 50 35 50 35" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M30 65C30 65 30 75 40 75C50 75 50 65 50 65" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M70 65C70 65 70 75 60 75C50 75 50 65 50 65" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M30 50H45" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M55 50H70" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+                <div class="artifact-logo-text">
+                    <span class="artifact-logo-name">Artifact</span>
+                    <span class="artifact-logo-tagline">empowering with AI</span>
+                </div>
+            </div>
+            <div class="brand-divider"></div>
+            <span class="sailor-logo">⛵ Sailor 2.0</span>
+        </div>
+        <h1>Michael Wegmüller</h1>
+        <div class="header-subtitle">Co-Founder & Managing Director | Artifact SA</div>
+        <div class="header-meta">
+            <span>📍 Bern, Switzerland</span>
+            <span>🎓 Universität Bern</span>
+            <span>🌐 artifact.swiss</span>
+            <span>Forbes Business Council Member</span>
+        </div>
+        <div class="header-badge">
+            <div class="badge-label">SAILOR 2.0</div>
+            <div class="badge-score">12+</div>
+            <div class="badge-score-label">Verified Sources</div>
+        </div>
+    </div>
+
+    <!-- Desktop Tabs -->
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" data-tab="executive-summary">Executive Summary</button>
+            <button class="tab" data-tab="subject-profile">Subject Profile</button>
+            <button class="tab" data-tab="network-map">Network Map</button>
+            <button class="tab" data-tab="behavioral-analysis">Behavioral Analysis</button>
+            <button class="tab" data-tab="strategic-position">Strategic Position</button>
+            <button class="tab" data-tab="engagement-playbook">Engagement Playbook</button>
+            <button class="tab" data-tab="media-footprint">Media Footprint</button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="tabs">
+            <button class="tab active" data-tab="executive-summary">Summary</button>
+            <button class="tab" data-tab="subject-profile">Profile</button>
+            <button class="tab" data-tab="network-map">Network</button>
+            <button class="tab" data-tab="behavioral-analysis">Behavioral</button>
+            <button class="tab" data-tab="strategic-position">Strategic</button>
+            <button class="tab" data-tab="engagement-playbook">Playbook</button>
+            <button class="tab" data-tab="media-footprint">Media</button>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Tab 1: Executive Summary -->
+        <div id="executive-summary" class="tab-content active">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">🔍 How This Summary Was Generated</span>
+                    <span class="methodology-badge">RESPONSIBLE AI</span>
+                </div>
+                <div class="methodology-content">
+                    <p>This executive summary was synthesized using <strong>natural language processing</strong> to extract and consolidate key facts from <strong>12+ public web sources</strong>. The AI analyzed professional profiles, company websites, news articles, and public speaking records. <strong>No private data</strong> was accessed. Confidence levels are assigned based on source reliability and cross-verification.</p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">LinkedIn Public Profile</span>
+                    <span class="methodology-source-tag">Company Website</span>
+                    <span class="methodology-source-tag">News Articles</span>
+                    <span class="methodology-source-tag">Conference Programs</span>
+                </div>
+            </div>
+
+            <div class="bluf-section">
+                <div class="bluf-label">🎯 BOTTOM LINE UP FRONT</div>
+                <div class="bluf-content"><strong>Michael Wegmüller</strong> is a seasoned AI strategist and entrepreneur with <strong>17+ years of experience</strong> in Data Science & AI. As <strong>Co-Founder of Artifact SA</strong>, he leads a Swiss AI agency focused on accelerating business impact through data-driven transformation. Winner of the <strong>"Digital Innovation of the Year 2024"</strong> award and <strong>Forbes Business Council member</strong>, he specializes in helping organizations implement and scale analytics across retail, consumer goods, and enterprise sectors.</div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Key Intelligence Summary</h3>
+                        <span class="badge badge-high-confidence">HIGH CONFIDENCE</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="metric-box">
+                            <div class="metric-value">17+</div>
+                            <div class="metric-label">Years Experience</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Projects Delivered</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">60+</div>
+                            <div class="metric-label">AI Use Cases</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value highlight">2024</div>
+                            <div class="metric-label">Innovation Award</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Source Confidence Distribution</h3>
+                    </div>
+                    <div class="pie-chart"></div>
+                    <div class="pie-legend">
+                        <span class="legend-item"><span class="legend-color" style="background: var(--green-verified)"></span> Primary (45%)</span>
+                        <span class="legend-item"><span class="legend-color" style="background: var(--blue-secondary)"></span> Secondary (25%)</span>
+                        <span class="legend-item"><span class="legend-color" style="background: var(--yellow-inferred)"></span> Inferred (20%)</span>
+                        <span class="legend-item"><span class="legend-color" style="background: var(--red-speculative)"></span> Speculative (10%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">🧠 Deep Analysis Insight</h3>
+                </div>
+                <div class="insight-box yellow">
+                    <div class="insight-title">⚡ Value Realization Focus</div>
+                    <p>Emphasizes driving AI portfolios to value realization - key factors and tools to manage AI initiatives and realize expected value while keeping challenges under control.</p>
+                </div>
+                <div class="insight-box green">
+                    <div class="insight-title">🌿 Responsible AI Advocate</div>
+                    <p>Strong focus on "responsible AI" - partly due to new legislation but also because trust in algorithms is still underdeveloped. AI risk management, ethics and governance are priorities.</p>
+                </div>
+                <div class="insight-box blue">
+                    <div class="insight-title">🛒 Retail & Grocery Expertise</div>
+                    <p>Deep expertise in retail transformation through Generative AI. Cites McKinsey data showing organizations embracing GenAI should see 2-4% revenue growth.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Subject Profile -->
+        <div id="subject-profile" class="tab-content">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">👤 Profile Data Sources</span>
+                    <span class="methodology-badge">RESPONSIBLE AI</span>
+                </div>
+                <div class="methodology-content">
+                    <p>Professional timeline and recognition data extracted from <strong>publicly available LinkedIn information</strong>, company "About" pages, and <strong>press releases</strong>. Industry expertise tags derived from published content analysis. Company metrics sourced from <strong>Swiss business registries</strong> and company disclosures. All data is publicly accessible.</p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">LinkedIn</span>
+                    <span class="methodology-source-tag">Moneyhouse.ch</span>
+                    <span class="methodology-source-tag">artifact.swiss</span>
+                    <span class="methodology-source-tag">Press Releases</span>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Professional Timeline</h3>
+                        <span class="badge badge-verified">VERIFIED</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2020 - Present</div>
+                        <div class="timeline-content">Co-Founder & Managing Director, Artifact SA</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2020 - Present</div>
+                        <div class="timeline-content">Associate Partner, IBM Consulting</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2007 - 2020</div>
+                        <div class="timeline-content">Senior Advisor & AI Agilist (Various)</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Recognition & Awards</h3>
+                        <span class="badge badge-verified">VERIFIED</span>
+                    </div>
+                    <div class="media-item">
+                        <h4>🏆 Digital Innovation of the Year 2024</h4>
+                        <p>Awarded for excellence in AI-driven digital transformation</p>
+                    </div>
+                    <div class="media-item">
+                        <h4>📰 Forbes Business Council Member</h4>
+                        <p>Invitation-only community for successful business owners</p>
+                    </div>
+                    <div class="media-item">
+                        <h4>🎤 ISE 2025 Speaker</h4>
+                        <p>Selected speaker at Integrated Systems Europe conference</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Industry Expertise</h3>
+                </div>
+                <div class="tags">
+                    <span class="tag">🤖 Data Science & AI</span>
+                    <span class="tag">🧠 Machine Learning</span>
+                    <span class="tag">💬 NLP</span>
+                    <span class="tag">🔮 Deep Learning</span>
+                    <span class="tag">📊 Analytics at Scale</span>
+                    <span class="tag">🛒 Retail & Grocery</span>
+                    <span class="tag">⚙️ Optimization</span>
+                    <span class="tag">🔄 Agile Transformation</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Artifact SA Company Profile</h3>
+                    <span class="badge badge-verified">VERIFIED</span>
+                </div>
+                <div class="grid-4">
+                    <div class="metric-box">
+                        <div class="metric-value">2020</div>
+                        <div class="metric-label">Founded</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value">4+</div>
+                        <div class="metric-label">Co-Founders</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value">15-25</div>
+                        <div class="metric-label">Team Members</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value">AI</div>
+                        <div class="metric-label">Focus Area</div>
+                    </div>
+                </div>
+                <div class="grid-2" style="margin-top: 16px;">
+                    <div class="metric-box">
+                        <div class="metric-value">50+</div>
+                        <div class="metric-label">Combined Years Experience</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value">Lausanne</div>
+                        <div class="metric-label">HQ Location</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Network Map -->
+        <div id="network-map" class="tab-content">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">🔗 Network Analysis Method</span>
+                    <span class="methodology-badge">RESPONSIBLE AI</span>
+                </div>
+                <div class="methodology-content">
+                    <p>Network connections identified through <strong>company team pages</strong>, <strong>Swiss business registry co-founder records</strong>, and professional association memberships. Client sectors inferred from <strong>case studies, testimonials, and published project descriptions</strong>. Only publicly disclosed relationships are included.</p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">Team Pages</span>
+                    <span class="methodology-source-tag">Business Registry</span>
+                    <span class="methodology-source-tag">Case Studies</span>
+                    <span class="methodology-source-tag">Association Sites</span>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Co-Founders</h3>
+                        <span class="badge badge-verified">VERIFIED</span>
+                    </div>
+                    <div class="person-card">
+                        <div class="person-avatar">SR</div>
+                        <div class="person-info">
+                            <h4>Stefan Ravizza</h4>
+                            <p>Co-Founder | Data Science Expert</p>
+                        </div>
+                    </div>
+                    <div class="person-card">
+                        <div class="person-avatar">TI</div>
+                        <div class="person-info">
+                            <h4>Taha Issa Ben M'Rad</h4>
+                            <p>Co-Founder | AI Engineering</p>
+                        </div>
+                    </div>
+                    <div class="person-card">
+                        <div class="person-avatar">AB</div>
+                        <div class="person-info">
+                            <h4>Abdelmontassar Alaeddine Ben M'Rad</h4>
+                            <p>Co-Founder | Technical Lead</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Professional Networks</h3>
+                        <span class="badge badge-verified">VERIFIED</span>
+                    </div>
+                    <div class="person-card">
+                        <div class="person-avatar">SC</div>
+                        <div class="person-info">
+                            <h4>SwissCognitive</h4>
+                            <p>AI Ventures, Advisory & Research</p>
+                        </div>
+                    </div>
+                    <div class="person-card">
+                        <div class="person-avatar">FB</div>
+                        <div class="person-info">
+                            <h4>Forbes Business Council</h4>
+                            <p>Member</p>
+                        </div>
+                    </div>
+                    <div class="person-card">
+                        <div class="person-avatar">IB</div>
+                        <div class="person-info">
+                            <h4>IBM Consulting</h4>
+                            <p>Associate Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Key Client Sectors</h3>
+                    <span class="badge badge-verified">VERIFIED</span>
+                </div>
+                <div class="tags">
+                    <span class="tag">🛒 Retail</span>
+                    <span class="tag">🥫 Consumer Goods</span>
+                    <span class="tag">🛍️ Grocery</span>
+                    <span class="tag">🏢 Enterprise</span>
+                    <span class="tag">🏦 Financial Services</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Behavioral Analysis (8 dimensions) -->
+        <div id="behavioral-analysis" class="tab-content">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2a10 10 0 1 0 10 10H12V2z"/>
+                            <path d="M12 2a10 10 0 0 1 10 10"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">🧠 Behavioral Analysis Methodology</span>
+                    <span class="methodology-badge">INFERRED</span>
+                </div>
+                <div class="methodology-content">
+                    <p>Behavioral traits inferred using <strong>linguistic analysis</strong> of published articles, social media posts, and interview transcripts. The 8-dimension radar chart scores are derived from <strong>keyword frequency analysis</strong> and <strong>sentiment patterns</strong> in public communications. Decision-making style indicators are based on described approaches in case studies. <strong>These are AI-generated inferences, not clinical assessments.</strong></p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">LinkedIn Posts</span>
+                    <span class="methodology-source-tag">Blog Articles</span>
+                    <span class="methodology-source-tag">Interviews</span>
+                    <span class="methodology-source-tag">Speaking Content</span>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Communication Style</h3>
+                        <span class="badge badge-inferred">INFERRED</span>
+                    </div>
+                    <div class="radar-container">
+                        <div class="radar-bg r1"></div>
+                        <div class="radar-bg r2"></div>
+                        <div class="radar-bg r3"></div>
+                        <div class="radar-bg r4"></div>
+                        <div class="radar-label pos-1">Data-Driven</div>
+                        <div class="radar-label pos-2">Pragmatic</div>
+                        <div class="radar-label pos-3">Collaborative</div>
+                        <div class="radar-label pos-4">Structured</div>
+                        <div class="radar-label pos-5">Action-Oriented</div>
+                        <div class="radar-label pos-6">Ethics-Focused</div>
+                        <div class="radar-label pos-7">Innovative</div>
+                        <div class="radar-label pos-8">Visionary</div>
+                        <div class="radar-shape">
+                            <svg viewBox="0 0 200 200">
+                                <polygon points="100,15 175,40 185,100 165,165 100,175 45,155 25,100 50,45" fill="rgba(59, 130, 246, 0.3)" stroke="#3b82f6" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Decision-Making Profile</h3>
+                        <span class="badge badge-inferred">INFERRED</span>
+                    </div>
+                    <table class="profile-table">
+                        <tr><td>Primary Style</td><td>Data-Driven Pragmatist</td></tr>
+                        <tr><td>Risk Tolerance</td><td>Moderate - Calculated</td></tr>
+                        <tr><td>Decision Speed</td><td>Deliberate with Agile mindset</td></tr>
+                        <tr><td>Stakeholder Focus</td><td>Value Realization</td></tr>
+                        <tr><td>Communication</td><td>Clear, metrics-oriented</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">🧠 Psychological Profile Indicators</h3>
+                    <span class="badge" style="background: var(--navy); color: white;">BEHAVIORAL ANALYSIS</span>
+                </div>
+                <div class="insight-box blue">
+                    <div class="insight-title">📊 Analytical Mindset</div>
+                    <p>Strong emphasis on data, metrics, and measurable outcomes. Frequently references research and statistics to support positions.</p>
+                </div>
+                <div class="insight-box green">
+                    <div class="insight-title">🤝 Collaborative Leader</div>
+                    <p>Emphasizes working "jointly with clients and universities" - values co-creation and partnership approaches.</p>
+                </div>
+                <div class="insight-box orange">
+                    <div class="insight-title">⚖️ Ethics-Conscious</div>
+                    <p>Strong focus on responsible AI, trust in algorithms, and governance. Views ethics as integral to AI success.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Key Value Phrases (Frequency Analysis)</h3>
+                </div>
+                <table class="topics-table">
+                    <thead>
+                        <tr>
+                            <th>Phrase</th>
+                            <th>Frequency</th>
+                            <th>Context</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>"Value realization"</td><td>High</td><td>Business outcomes & ROI</td></tr>
+                        <tr><td>"Agile Analytics at Scale"</td><td>High</td><td>Company positioning</td></tr>
+                        <tr><td>"Responsible AI"</td><td>Medium</td><td>Ethics & governance</td></tr>
+                        <tr><td>"Pragmatic solutions"</td><td>Medium</td><td>Implementation approach</td></tr>
+                        <tr><td>"Accelerate impact"</td><td>Medium</td><td>Speed to value</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 5: Strategic Position -->
+        <div id="strategic-position" class="tab-content">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/>
+                            <line x1="12" y1="22" x2="12" y2="15.5"/>
+                            <polyline points="22,8.5 12,15.5 2,8.5"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">📊 Strategic Analysis Framework</span>
+                    <span class="methodology-badge">AI-GENERATED</span>
+                </div>
+                <div class="methodology-content">
+                    <p>SWOT analysis generated by comparing subject's <strong>stated capabilities and market positioning</strong> against industry benchmarks. Competitive positioning derived from <strong>market research reports</strong> and competitor analysis. Recommendations are AI-generated suggestions based on identified patterns. <strong>Strategic assessments should be validated with domain experts.</strong></p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">Company Positioning</span>
+                    <span class="methodology-source-tag">Market Research</span>
+                    <span class="methodology-source-tag">Competitor Sites</span>
+                    <span class="methodology-source-tag">Industry Reports</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Strategic SWOT Analysis</h3>
+                </div>
+                <div class="swot-grid">
+                    <div class="swot-box strengths">
+                        <h4>💪 Strengths</h4>
+                        <ul>
+                            <li><div class="interactive-item">17+ years deep AI/Data Science expertise<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Reference his experience to build credibility - ask about lessons learned from early AI projects</div></div></li>
+                            <li><div class="interactive-item">Award-winning innovation track record<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Congratulate on 2024 award - ask what made the winning project special</div></div></li>
+                            <li><div class="interactive-item">IBM partnership for enterprise reach<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Explore how IBM relationship enables scale for larger engagements</div></div></li>
+                            <li><div class="interactive-item">Swiss quality & trust positioning<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Leverage Swiss reputation for reliability and data privacy compliance</div></div></li>
+                        </ul>
+                    </div>
+                    <div class="swot-box weaknesses">
+                        <h4>⚠️ Potential Gaps</h4>
+                        <ul>
+                            <li><div class="interactive-item">Boutique size vs. large consultancies<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Position agility and personalized attention as advantages over big firms</div></div></li>
+                            <li><div class="interactive-item">Geographic focus primarily Swiss/DACH<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Ask about international expansion plans if relevant to your needs</div></div></li>
+                            <li><div class="interactive-item">Heavy retail/grocery focus<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Probe for experience in your specific industry if different</div></div></li>
+                        </ul>
+                    </div>
+                    <div class="swot-box opportunities">
+                        <h4>🚀 Opportunities</h4>
+                        <ul>
+                            <li><div class="interactive-item">GenAI transformation wave<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Discuss specific GenAI use cases relevant to your business</div></div></li>
+                            <li><div class="interactive-item">Responsible AI legislation creating demand<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Ask about EU AI Act compliance readiness services</div></div></li>
+                            <li><div class="interactive-item">University partnerships for R&D<div class="item-recommendation"><div class="item-recommendation-label">💡 Recommendation</div>Explore co-innovation opportunities with academic connections</div></div></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swot-box threats" style="max-width: 400px;">
+                    <h4>🎯 Competitive Threats</h4>
+                    <ul>
+                        <li>Big 4 consultancies expanding AI practices</li>
+                        <li>Hyperscaler AI services (AWS, Azure, GCP)</li>
+                        <li>Specialized AI startups in niche areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Competitive Positioning Matrix</h3>
+                </div>
+                <div class="scatter-plot">
+                    <div class="scatter-grid">
+                        <div class="scatter-grid-line horizontal h1"></div>
+                        <div class="scatter-grid-line horizontal h2"></div>
+                        <div class="scatter-grid-line horizontal h3"></div>
+                        <div class="scatter-grid-line vertical v1"></div>
+                        <div class="scatter-grid-line vertical v2"></div>
+                        <div class="scatter-grid-line vertical v3"></div>
+                    </div>
+                    <span class="scatter-axis-label y-label">Market Expertise →</span>
+                    <span class="scatter-axis-label x-label">Agility & Speed →</span>
+                    <span class="scatter-axis-label y-high">High</span>
+                    <span class="scatter-axis-label y-low">Low</span>
+                    <span class="scatter-axis-label x-low">Low</span>
+                    <span class="scatter-axis-label x-high">High</span>
+                    <div class="scatter-dots-container">
+                        <div class="scatter-dot subject" style="left: 80%; bottom: 75%;"><div class="scatter-tooltip">Artifact SA - High agility, Strong expertise</div></div>
+                        <div class="scatter-dot competitor1" style="left: 30%; bottom: 85%;"><div class="scatter-tooltip">McKinsey - High expertise, Lower agility</div></div>
+                        <div class="scatter-dot competitor2" style="left: 45%; bottom: 70%;"><div class="scatter-tooltip">Accenture - Balanced positioning</div></div>
+                        <div class="scatter-dot competitor3" style="left: 65%; bottom: 45%;"><div class="scatter-tooltip">Boutique AI Firms - Agile but less depth</div></div>
+                    </div>
+                </div>
+                <div class="chart-legend" style="margin-top: 16px;">
+                    <span class="legend-item"><span class="legend-color" style="background: var(--green-verified)"></span> Artifact SA</span>
+                    <span class="legend-item"><span class="legend-color" style="background: var(--charcoal)"></span> McKinsey</span>
+                    <span class="legend-item"><span class="legend-color" style="background: var(--blue-secondary)"></span> Accenture</span>
+                    <span class="legend-item"><span class="legend-color" style="background: var(--slate-gray)"></span> Boutique Firms</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Core Differentiators (Self-Stated)</h3>
+                </div>
+                <div class="grid-3">
+                    <div class="differentiator-box">
+                        <div class="differentiator-icon">⚡</div>
+                        <div class="differentiator-label">Agile Analytics at Scale</div>
+                    </div>
+                    <div class="differentiator-box">
+                        <div class="differentiator-icon">🎯</div>
+                        <div class="differentiator-label">Value Realization Focus</div>
+                    </div>
+                    <div class="differentiator-box">
+                        <div class="differentiator-icon">🤝</div>
+                        <div class="differentiator-label">University Partnerships</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 6: Engagement Playbook -->
+        <div id="engagement-playbook" class="tab-content">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">💬 Engagement Strategy Generation</span>
+                    <span class="methodology-badge">AI-GENERATED</span>
+                </div>
+                <div class="methodology-content">
+                    <p>Conversation starters and engagement strategies generated by analyzing <strong>stated interests, published viewpoints, and professional focus areas</strong>. Topic probability scores based on frequency of discussion in public content. <strong>Recommendations are suggestions to personalize - adapt based on your specific context and meeting objectives.</strong></p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">Content Analysis</span>
+                    <span class="methodology-source-tag">Topic Modeling</span>
+                    <span class="methodology-source-tag">Public Statements</span>
+                    <span class="methodology-source-tag">Meeting Context</span>
+                </div>
+            </div>
+
+            <div class="strategy-banner">
+                <div class="strategy-label">🎯 ENGAGEMENT STRATEGY FOR Partnership Discussion</div>
+                <div class="strategy-content">Lead with data-driven value propositions and focus on measurable outcomes. Michael responds well to pragmatic approaches with clear ROI metrics. Emphasize how collaboration can accelerate impact while maintaining responsible AI principles. Reference specific industry examples from retail/consumer goods if applicable to demonstrate understanding of his core domain.</div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">✅ Recommended Conversation Starters</h3>
+                    </div>
+                    <div class="conversation-card">
+                        <h4>🏆 Recent Award Recognition</h4>
+                        <p>"Congratulations on the Digital Innovation of the Year 2024 award - what made that project particularly impactful?"</p>
+                    </div>
+                    <div class="conversation-card">
+                        <h4>📊 Value Realization Framework</h4>
+                        <p>"I read about your work on AI value realization frameworks - how do you typically measure success for AI initiatives?"</p>
+                    </div>
+                    <div class="conversation-card">
+                        <h4>🤖 GenAI in Retail</h4>
+                        <p>"Your insights on GenAI driving 2-4% revenue growth in retail are compelling - what use cases are you seeing gain traction?"</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">🚫 Topics to Approach Carefully</h3>
+                    </div>
+                    <div class="conversation-card warning">
+                        <h4>Unrealistic AI Promises</h4>
+                        <p>Avoid overhyping AI capabilities - he values pragmatic, realistic assessments</p>
+                    </div>
+                    <div class="conversation-card warning">
+                        <h4>Ignoring Ethics/Governance</h4>
+                        <p>Don't dismiss responsible AI concerns - this is a core value for him</p>
+                    </div>
+                    <div class="conversation-card warning">
+                        <h4>Vague ROI Discussions</h4>
+                        <p>Be prepared with specific metrics - he expects quantifiable value propositions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">📋 Anticipated Discussion Topics</h3>
+                </div>
+                <table class="topics-table">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Probability</th>
+                            <th>Preparation Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>AI Value Realization</td><td><span class="probability-badge prob-very-high">Very High</span></td><td>Prepare specific ROI examples and metrics</td></tr>
+                        <tr><td>Responsible AI & Governance</td><td><span class="probability-badge prob-high">High</span></td><td>Know your position on AI ethics</td></tr>
+                        <tr><td>Scaling Analytics</td><td><span class="probability-badge prob-high">High</span></td><td>Discuss operating models for AI at scale</td></tr>
+                        <tr><td>GenAI Use Cases</td><td><span class="probability-badge prob-medium-high">Medium-High</span></td><td>Bring specific examples relevant to your industry</td></tr>
+                        <tr><td>Partnership Models</td><td><span class="probability-badge prob-medium">Medium</span></td><td>Research IBM/university collaboration models</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 7: Media Footprint -->
+        <div id="media-footprint" class="tab-content">
+            <!-- Methodology Box -->
+            <div class="methodology-box">
+                <button class="methodology-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <span>▼</span> Details
+                </button>
+                <div class="methodology-header">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <span class="methodology-title">📰 Media Analysis Method</span>
+                    <span class="methodology-badge">RESPONSIBLE AI</span>
+                </div>
+                <div class="methodology-content">
+                    <p>Media presence compiled from <strong>web search results, conference speaker listings, and company blog archives</strong>. Sentiment analysis performed using <strong>NLP classification</strong> on article excerpts and social media mentions. Sentiment scores represent aggregate tone of coverage, not individual article assessments. <strong>Historical data limited to indexed public content.</strong></p>
+                </div>
+                <div class="methodology-sources">
+                    <span class="methodology-source-tag">News Search</span>
+                    <span class="methodology-source-tag">Conference Sites</span>
+                    <span class="methodology-source-tag">Blog Archives</span>
+                    <span class="methodology-source-tag">Social Media</span>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Published Content</h3>
+                    </div>
+                    <div class="media-item">
+                        <h4>📝 Artifact Insights Blog</h4>
+                        <p>Regular posts on AI strategy, use cases, and industry trends</p>
+                    </div>
+                    <div class="media-item">
+                        <h4>📊 GenAI Infographics</h4>
+                        <p>"Generative AI - Why Now" series for retail and grocery sectors</p>
+                    </div>
+                    <div class="media-item">
+                        <h4>📋 SwissCognitive Research</h4>
+                        <p>AI frameworks and value realization methodologies</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Speaking & Appearances</h3>
+                    </div>
+                    <div class="media-item">
+                        <h4>🎤 ISE 2025</h4>
+                        <p>Scheduled speaker at Integrated Systems Europe conference</p>
+                    </div>
+                    <div class="media-item">
+                        <h4>🎓 VIS x Artifact @ ETH</h4>
+                        <p>Navigating to Impact with AI - University collaboration event</p>
+                    </div>
+                    <div class="media-item">
+                        <h4>📅 Digitaltage Thun</h4>
+                        <p>Digital transformation community events</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Media Sentiment Analysis</h3>
+                </div>
+                <div class="chart-container">
+                    <div class="bar-chart-wrapper">
+                        <span class="bar-chart-y-axis">Sentiment Score →</span>
+                        <div class="bar-chart-y-ticks">
+                            <span>100%</span>
+                            <span>75%</span>
+                            <span>50%</span>
+                            <span>25%</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="bar-chart-grid-line" style="top: 25%;"></div>
+                        <div class="bar-chart-grid-line" style="top: 50%;"></div>
+                        <div class="bar-chart-grid-line" style="top: 75%;"></div>
+                        <div class="bar-chart">
+                            <div class="bar-group">
+                                <div class="bar-tooltip">2022: 75% positive, 20% neutral, 5% critical</div>
+                                <div class="bar" style="height: 120px;">
+                                    <div class="bar-segment positive" style="height: 75%;"></div>
+                                    <div class="bar-segment neutral" style="height: 20%;"></div>
+                                    <div class="bar-segment critical" style="height: 5%;"></div>
+                                </div>
+                                <span class="bar-label">2022</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-tooltip">2023: 80% positive, 15% neutral, 5% critical</div>
+                                <div class="bar" style="height: 140px;">
+                                    <div class="bar-segment positive" style="height: 80%;"></div>
+                                    <div class="bar-segment neutral" style="height: 15%;"></div>
+                                    <div class="bar-segment critical" style="height: 5%;"></div>
+                                </div>
+                                <span class="bar-label">2023</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-tooltip">2024: 85% positive, 12% neutral, 3% critical</div>
+                                <div class="bar" style="height: 160px;">
+                                    <div class="bar-segment positive" style="height: 85%;"></div>
+                                    <div class="bar-segment neutral" style="height: 12%;"></div>
+                                    <div class="bar-segment critical" style="height: 3%;"></div>
+                                </div>
+                                <span class="bar-label">2024</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-tooltip">2025: 88% positive, 10% neutral, 2% critical</div>
+                                <div class="bar" style="height: 180px;">
+                                    <div class="bar-segment positive" style="height: 88%;"></div>
+                                    <div class="bar-segment neutral" style="height: 10%;"></div>
+                                    <div class="bar-segment critical" style="height: 2%;"></div>
+                                </div>
+                                <span class="bar-label">2025</span>
+                            </div>
+                        </div>
+                        <span class="bar-chart-x-axis">Time Period</span>
+                    </div>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="legend-color" style="background: var(--green-verified)"></span> Positive</span>
+                        <span class="legend-item"><span class="legend-color" style="background: var(--blue-secondary)"></span> Neutral</span>
+                        <span class="legend-item"><span class="legend-color" style="background: var(--red-speculative)"></span> Critical</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sources Section -->
+        <div class="sources-section">
+            <h3>📚 Intelligence Sources (12)</h3>
+            <div class="sources-grid">
+                <a href="https://www.linkedin.com/in/michael-wegmueller/" target="_blank" class="source-item">
+                    <div class="source-icon">LI</div>
+                    <div class="source-info">
+                        <div class="source-name">LinkedIn Profile</div>
+                        <div class="source-meta">2025 | Professional Network</div>
+                    </div>
+                </a>
+                <a href="https://artifact.swiss/team/michael-wegmuller/" target="_blank" class="source-item">
+                    <div class="source-icon">AR</div>
+                    <div class="source-info">
+                        <div class="source-name">Artifact SA - Team Page</div>
+                        <div class="source-meta">2025 | Company Website</div>
+                    </div>
+                </a>
+                <a href="https://swisscognitive.ch/person/michael-wegmuller/" target="_blank" class="source-item">
+                    <div class="source-icon">SC</div>
+                    <div class="source-info">
+                        <div class="source-name">SwissCognitive Profile</div>
+                        <div class="source-meta">2025 | AI Research Network</div>
+                    </div>
+                </a>
+                <a href="https://www.iseurope.org/speakers/michael-wegmuller" target="_blank" class="source-item">
+                    <div class="source-icon">IS</div>
+                    <div class="source-info">
+                        <div class="source-name">ISE 2025 Speakers</div>
+                        <div class="source-meta">2025 | Conference</div>
+                    </div>
+                </a>
+                <a href="https://insights.artifact.swiss/" target="_blank" class="source-item">
+                    <div class="source-icon">AI</div>
+                    <div class="source-info">
+                        <div class="source-name">Artifact Insights Blog</div>
+                        <div class="source-meta">2025 | Company Blog</div>
+                    </div>
+                </a>
+                <a href="https://www.moneyhouse.ch/en/company/artifact-sa-11775033231" target="_blank" class="source-item">
+                    <div class="source-icon">MH</div>
+                    <div class="source-info">
+                        <div class="source-name">Moneyhouse - Artifact SA</div>
+                        <div class="source-meta">2025 | Business Registry</div>
+                    </div>
+                </a>
+                <a href="https://vis.ethz.ch/en/events/294/" target="_blank" class="source-item">
+                    <div class="source-icon">VE</div>
+                    <div class="source-info">
+                        <div class="source-name">VIS x Artifact @ ETH</div>
+                        <div class="source-meta">2025 | University Event</div>
+                    </div>
+                </a>
+                <a href="https://www.startup.ch/artifact" target="_blank" class="source-item">
+                    <div class="source-icon">SU</div>
+                    <div class="source-info">
+                        <div class="source-name">Startup.ch - Artifact</div>
+                        <div class="source-meta">2025 | Startup Directory</div>
+                    </div>
+                </a>
+                <a href="https://www.startupticker.ch/en/companies/artifact-sa" target="_blank" class="source-item">
+                    <div class="source-icon">ST</div>
+                    <div class="source-info">
+                        <div class="source-name">Startupticker - Artifact SA</div>
+                        <div class="source-meta">2025 | Startup News</div>
+                    </div>
+                </a>
+                <a href="https://artifact.swiss/de/about/" target="_blank" class="source-item">
+                    <div class="source-icon">AB</div>
+                    <div class="source-info">
+                        <div class="source-name">Artifact SA - About</div>
+                        <div class="source-meta">2025 | Company Website</div>
+                    </div>
+                </a>
+                <a href="https://swisscognitive.ch/wp-content/uploads/2025/01/2024-12-04_SwissCognitive_Artifact-ST-Vshare.pdf" target="_blank" class="source-item">
+                    <div class="source-icon">PD</div>
+                    <div class="source-info">
+                        <div class="source-name">SwissCognitive PDF</div>
+                        <div class="source-meta">2024 | Research Document</div>
+                    </div>
+                </a>
+                <a href="https://artifact.swiss/imprint/" target="_blank" class="source-item">
+                    <div class="source-icon">IM</div>
+                    <div class="source-info">
+                        <div class="source-name">Artifact SA - Imprint</div>
+                        <div class="source-meta">2025 | Legal Info</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-brand">
+            <div class="footer-artifact-logo">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10C50 10 35 10 25 20C15 30 15 45 15 45C15 45 15 30 25 20C35 10 50 10 50 10Z" fill="#1a2b4a"/>
+                    <path d="M90 45C90 45 90 30 80 20C70 10 55 10 55 10C55 10 70 10 80 20C90 30 90 45 90 45Z" fill="#1a2b4a"/>
+                    <path d="M50 90C50 90 65 90 75 80C85 70 85 55 85 55C85 55 85 70 75 80C65 90 50 90 50 90Z" fill="#1a2b4a"/>
+                    <path d="M10 55C10 55 10 70 20 80C30 90 45 90 45 90C45 90 30 90 20 80C10 70 10 55 10 55Z" fill="#1a2b4a"/>
+                    <path d="M30 35C30 35 30 25 40 25C50 25 50 35 50 35" stroke="#1a2b4a" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M70 35C70 35 70 25 60 25C50 25 50 35 50 35" stroke="#1a2b4a" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M30 65C30 65 30 75 40 75C50 75 50 65 50 65" stroke="#1a2b4a" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M70 65C70 65 70 75 60 75C50 75 50 65 50 65" stroke="#1a2b4a" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <path d="M30 50H45" stroke="#1a2b4a" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M55 50H70" stroke="#1a2b4a" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+                <span class="footer-artifact-text">Artifact</span>
+            </div>
+            <span>×</span>
+            <span class="footer-sailor">⛵ Sailor 2.0</span>
+        </div>
+        <p>Generated: February 2, 2026 | Sources: 12+ verified</p>
+        <p>Prepared for: Demo User | Occasion: Partnership Discussion</p>
+        <div class="responsible-ai-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 12 15 16 10"/>
+            </svg>
+            Responsible AI - Only public data sources used
+        </div>
+        <div class="original-prompt">
+            <strong>Original Request:</strong> "Meeting prep for Michael Wegmüller, Co-Founder of Artifact SA, for a partnership discussion about AI consulting services."
+        </div>
+    </div>
+
+    <!-- Share Button -->
+    <button class="share-button" onclick="shareProfile()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+        Share Profile
+    </button>
+
+    <div class="share-toast" id="shareToast">Link copied to clipboard!</div>
+
+    <script>
+        // Tab switching - both desktop and mobile
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.dataset.tab;
+
+                // Update all tabs (desktop and mobile)
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.toggle('active', t.dataset.tab === tabId);
+                });
+
+                // Update content
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+
+                // Scroll to top on mobile
+                if (window.innerWidth <= 768) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Share functionality
+        function shareProfile() {
+            const url = window.location.href;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Sailor 2.0 - Michael Wegmüller Profile',
+                    text: 'Meeting Intelligence Profile for Michael Wegmüller',
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    const toast = document.getElementById('shareToast');
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 2000);
+                });
+            }
+        }
+
+        // Deep link to specific tab from URL hash
+        if (window.location.hash) {
+            const tabId = window.location.hash.substring(1);
+            const tab = document.querySelector(`[data-tab="${tabId}"]`);
+            if (tab) tab.click();
+        }
+    </script>
+</body>
+</html>
